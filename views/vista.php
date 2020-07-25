@@ -40,11 +40,11 @@ require_once("app/funcion.php");
                     <td><?php echo $f["Edad"] ?></td>
 
                     <td>
-                        <form action="" method="POST">
+                        <!-- <form action="" method="POST"> -->
                             <input type='hidden' value="<?php echo $f['id'] ?>" name="id">
-                            <button class="update" data-toggle="modal" data-target="#exampleModalLong" type="submit"><i class="fas fa-pen-square"></i></button>
+                            <button class="update" data-toggle="modal" data-target="#exampleModal" type="submit"><i class="fas fa-pen-square"></i></button>
                             <button class="click-des" type="submit"><i class="fas fa-times-circle"></i></button>
-                        </form>
+                        <!-- </form> -->
                     </td>
                 </tr>
             <?php
@@ -102,7 +102,7 @@ require_once("app/funcion.php");
     <button type="submit">Vaciar Base de datos</button>
 
     <!-- modal-->
-    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="exampleModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -113,62 +113,60 @@ require_once("app/funcion.php");
                 </div>
                 <div class="modal-body">
                     <form id="update_client" action="<?php echo $_SERVER["PHP_SELF"]  ?>" method="POST">
-                        <!-- <?php
-                                foreach (get_client_id() as $f) {
-                                ?> -->
-                        <input type='hidden' value="<?php echo $f["id"] ?>" name="id">
+                        <?php foreach (get_client_id() as $f) { ?>
+                            <input type='hidden' value="<?php echo $f["id"] ?>" name="id">
 
-                        <div class="form-group">
-                            <label>Nombre</label>
-                            <input type="text" class="form-control" name="nombre" value="<?php echo $f["Nombre"]?>" placeholder="Ingrese su nombre">
-                        </div>
-                        <div class="form-group">
-                            <label>Apellidos</label>
-                            <input type="text" class="form-control" name="apellidos" value="<?php echo $f["Apellidos"]?>" placeholder="Ingrese sus apellidos">
-                        </div>
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input type="text" class="form-control" name="nombre" value="<?php echo $f["Nombre"] ?>" placeholder="Ingrese su nombre">
+                            </div>
+                            <div class="form-group">
+                                <label>Apellidos</label>
+                                <input type="text" class="form-control" name="apellidos" value="<?php echo $f["Apellidos"] ?>" placeholder="Ingrese sus apellidos">
+                            </div>
 
-                        <div class="form-group">
-                            <label>Teléfono</label>
-                            <input type="number" class="form-control" name="telefono" value="<?php echo $f["Telefono"]?>" placeholder="Ingrese su telefono">
-                        </div>
+                            <div class="form-group">
+                                <label>Teléfono</label>
+                                <input type="number" class="form-control" name="telefono" value="<?php echo $f["Telefono"] ?>" placeholder="Ingrese su telefono">
+                            </div>
 
-                        <div class="form-group">
-                            <label>Correo</label>
-                            <input type="email" class="form-control text-muted" name="correo" value="<?php echo $f["Correo"]?>" placeholder="Ingrese su correo">
-                        </div>
+                            <div class="form-group">
+                                <label>Correo</label>
+                                <input type="email" class="form-control text-muted" name="correo" value="<?php echo $f["Correo"] ?>" placeholder="Ingrese su correo">
+                            </div>
 
-                        <div class="form-group">
-                            <label>Dirección</label>
-                            <input type="text" class="form-control" name="direccion" value="<?php echo $f["Dirección"]?>" placeholder="Ingrese su direccion">
-                        </div>
+                            <div class="form-group">
+                                <label>Dirección</label>
+                                <input type="text" class="form-control" name="direccion" value="<?php echo $f["Dirección"] ?>" placeholder="Ingrese su direccion">
+                            </div>
 
-                        <div class="form-group">
-                            <label>DNI</label>
-                            <input type="text" class="form-control" name="dni"  value="<?php echo $f["DNI"]?>" placeholder="Ingrese su dni">
-                        </div>
+                            <div class="form-group">
+                                <label>DNI</label>
+                                <input type="text" class="form-control" name="dni" value="<?php echo $f["DNI"] ?>" placeholder="Ingrese su dni">
+                            </div>
 
-                        <div class="form-group">
-                            <label>Población</label>
-                            <input type="text" class="form-control" name="poblacion"  value="<?php echo $f["Población"]?>" placeholder="Ingrese su poblacion">
-                        </div>
+                            <div class="form-group">
+                                <label>Población</label>
+                                <input type="text" class="form-control" name="poblacion" value="<?php echo $f["Población"] ?>" placeholder="Ingrese su poblacion">
+                            </div>
 
-                        <div class="form-group">
-                            <label>Edad</label>
-                            <input type="number" class="form-control" name="edad"  value="<?php echo $f["Edad"]?>" placeholder="Ingrese su edad">
-                        </div>
-                        <div class="form-group text-center">
-                            <!-- <input type="hidden" name="action" value="update"> -->
-                            <input type="button" class="btn btn-primary" data-dismiss="modal" name="update" value="Actualizar">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <div class="form-group">
+                                <label>Edad</label>
+                                <input type="number" class="form-control" name="edad" value="<?php echo $f["Edad"] ?>" placeholder="Ingrese su edad">
+                            </div>
+                            <div class="form-group text-center">
+                                <!-- <input type="hidden" name="action" value="update"> -->
+                                <button type="button" class="btn btn-primary" name="update">Actualizar</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 
-                        </div>
-                        <!-- <div class="modal-footer">
+                            </div>
+                            <!-- <div class="modal-footer">
                            
-                        <!-- </div> -->
+                         </div> -->
                     </form>
-                    <!-- <?php
-                                }
-                            ?> -->
+                <?php
+                        }
+                ?>
 
                 </div>
             </div>

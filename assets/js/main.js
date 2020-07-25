@@ -22,7 +22,7 @@ $(document).ready(function () {
 
     // Actualizar clientes
     $('.update').on('click', function () {
-        $('#myModal').modal('show');
+        // $('#myModal').modal('show');
         //     var actualizar_client = $('#update_client').serialize();
         //     $.ajax({
         //         type: 'POST',
