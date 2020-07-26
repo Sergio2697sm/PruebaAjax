@@ -5,7 +5,13 @@ require_once("app/funcion.php");
 
 <!--Contenido-->
 <div class="container-fluid">
-    <h1 class="text-center">Tabla Clientes</h1>
+
+    <div class="w-100 d-flex flex-column justify-content-center align-items-center">
+        <h1 class="text-center">Tabla Clientes</h1>
+        <!--Modal para Insertar-->
+        <button type="submit" class="btn btn-primary m-2" data-toggle="modal" data-target="#insertar_modal">Insertar clientes</button>
+    </div>
+
     <table class="table table-bordered">
         <thead>
             <tr class="text-center">
@@ -27,12 +33,12 @@ require_once("app/funcion.php");
             foreach (select_client() as $f) {
             ?>
                 <tr class="text-center">
-                    <td><?php echo $f["id"]; ?> </td>
+                    <td><?php echo $f["id"]; ?></td>
 
-                    <td><?php echo $f["Nombre"]; ?> </td>
-                    <td><?php echo $f["Apellidos"]; ?> </td>
-                    <td><?php echo $f["Telefono"]; ?> </td>
-                    <td><?php echo $f["Correo"]; ?> </td>
+                    <td><?php echo $f["Nombre"]; ?></td>
+                    <td><?php echo $f["Apellidos"]; ?></td>
+                    <td><?php echo $f["Telefono"]; ?></td>
+                    <td><?php echo $f["Correo"]; ?></td>
 
                     <td><?php echo  $f["Dirección"] ?></td>
                     <td><?php echo $f["DNI"] ?></td>
@@ -60,8 +66,5 @@ require_once("app/funcion.php");
     include("includes/delete_modal.php");
     ?>
 
-    <!--Modal para Insertar-->
-    <button type="submit" data-toggle="modal" data-target="#insertar_modal">Insertar clientes</button>
-    <button type="submit">Vaciar Base de datos</button>
 
     <?php require_once("includes/" . "inc_footer.php") ?>

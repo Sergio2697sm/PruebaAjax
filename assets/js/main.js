@@ -30,8 +30,6 @@ $(document).ready(function () {
             return $(this).text();
         });
 
-        // console.log(datos)
-
         $('#update_id').val(datos[0]);
         $('#nombre').val(datos[1]);
         $('#apellidos').val(datos[2]);
@@ -98,8 +96,6 @@ $(document).ready(function () {
             }
         });
     })
-
-    //Borrar todos los clientes
 })
 
 

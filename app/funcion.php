@@ -95,8 +95,3 @@ function delete_client() {
 
 }
 
-// function mostrar_campo($campo)
-// {
-//     if (isset($_POST[$campo]))
-//         echo 'value="' . $_POST[$campo] . '"';
-// }
