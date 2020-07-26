@@ -76,9 +76,9 @@ function update_client()
     $resultado = $conexion->query($update);
 
     if ($resultado) {
-        echo "<script>Cambiado con exito</script>";
+        echo "<script>alert('Cambiado con exito')</script>";
     } else {
-        echo "<script>Error</script>";
+        echo "<script>alert('Error')</script>";
     }
 }
 

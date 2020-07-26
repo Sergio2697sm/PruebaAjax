@@ -16,7 +16,7 @@ switch ($action) {
         insert_client();
         break;
 
-    // case 'update';
-    //     update_client();
-    //     break;
+    case 'update';
+        update_client();
+        break;
 }
