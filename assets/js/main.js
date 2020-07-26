@@ -65,6 +65,7 @@ $(document).ready(function () {
         });
     });
 
+    //Borrar Clientes
     $('.borrar').on('click', function () {
 
            //consigue los elementos de la tabla de la vista
@@ -96,8 +97,9 @@ $(document).ready(function () {
                 }
             }
         });
-
     })
+
+    //Borrar todos los clientes
 })
 
 

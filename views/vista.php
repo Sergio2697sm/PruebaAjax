@@ -54,16 +54,14 @@ require_once("app/funcion.php");
         </tbody>
     </table>
 
-    <?php 
+    <?php
     include("includes/update_modal.php");
     include("includes/insertar_clientes.php");
     include("includes/delete_modal.php");
-
-    // if(isset($_POST["borrar"])) {
-    //     delete_client();
-    // }
     ?>
 
+    <!--Modal para Insertar-->
+    <button type="submit" data-toggle="modal" data-target="#insertar_modal">Insertar clientes</button>
     <button type="submit">Vaciar Base de datos</button>
 
     <?php require_once("includes/" . "inc_footer.php") ?>
