@@ -7,12 +7,14 @@
     <title>Prueba</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 </head>
 
 <body>
-<?php
-// include("app/config.php");
-?>
+    <?php
+    // include("app/config.php");
+    ?>
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">PruebaAjax</a>

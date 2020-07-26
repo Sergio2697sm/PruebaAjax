@@ -19,4 +19,8 @@ switch ($action) {
     case 'update';
         update_client();
         break;
+
+    case 'delete';
+    delete_client();
+    break;
 }

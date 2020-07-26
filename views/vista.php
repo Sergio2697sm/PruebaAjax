@@ -1,7 +1,7 @@
 <?php require_once("includes/" . "inc_header.php");
 require_once("app/funcion.php");
-?>
 
+?>
 
 <!--Contenido-->
 <div class="container-fluid">
@@ -40,9 +40,12 @@ require_once("app/funcion.php");
                     <td><?php echo $f["Edad"] ?></td>
 
                     <td>
+                        <!--Modal para actualizar-->
                         <input type='hidden' value="<?php echo $f['id'] ?>" name="id">
                         <button type="submit" class="update" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-pen-square"></i></button>
-                        <button class="click-des" type="submit"><i class="fas fa-times-circle"></i></button>
+
+                        <!--Modal para borrar-->
+                        <button type="submit" class="borrar" data-toggle="modal" data-target="#exampleModa2"><i class="fas fa-times-circle"></i></button>
                     </td>
                 </tr>
             <?php
@@ -51,17 +54,16 @@ require_once("app/funcion.php");
         </tbody>
     </table>
 
-    <?php include("includes/update_modal.php");
+    <?php 
+    include("includes/update_modal.php");
     include("includes/insertar_clientes.php");
+    include("includes/delete_modal.php");
+
+    // if(isset($_POST["borrar"])) {
+    //     delete_client();
+    // }
     ?>
 
     <button type="submit">Vaciar Base de datos</button>
 
-
-
-    <!-- <?php
-    //if (isset($_POST["update"])) {
-        //update_client();
-   // }
-    ?> -->
     <?php require_once("includes/" . "inc_footer.php") ?>

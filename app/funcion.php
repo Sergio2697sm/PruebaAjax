@@ -72,7 +72,6 @@ function update_client()
     $update = "UPDATE usuarios 
     SET Nombre= '$nombre',Apellidos='$apellidos',Telefono=$telefono,Correo='$correo',Dirección='$direccion',
     DNI='$dni',Población='$poblacion',Edad=$edad WHERE id = $id";
-    echo $update;
     $resultado = $conexion->query($update);
 
     if ($resultado) {
@@ -82,22 +81,22 @@ function update_client()
     }
 }
 
+function delete_client() {
+    $conexion = conexionBBDD();
+    $delete= "DELETE FROM usuarios WHERE id = $_POST[id]";
+    $resultado = $conexion->query($delete);
+    echo $delete;
 
-function json_output($status = 200, $msg = '', $data = [])
-{
+    if ($resultado) {
+        echo "<script>alert('Borrado con exito')</script>";
+    } else {
+        echo "<script>alert('Error')</script>";
+    }
 
-    $r = [
-        'status' => $status,
-        'msg'  => $msg,
-        'data' => $data
-    ];
-
-    echo json_encode($r);
-    die();
 }
 
-function mostrar_campo($campo)
-{
-    if (isset($_POST[$campo]))
-        echo 'value="' . $_POST[$campo] . '"';
-}
+// function mostrar_campo($campo)
+// {
+//     if (isset($_POST[$campo]))
+//         echo 'value="' . $_POST[$campo] . '"';
+// }

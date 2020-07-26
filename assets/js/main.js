@@ -41,10 +41,6 @@ $(document).ready(function () {
         $('#dni').val(datos[6]);
         $('#poblacion').val(datos[7]);
         $('#edad').val(datos[8]);
-
-
-
-
     });
 
 
@@ -52,7 +48,7 @@ $(document).ready(function () {
     $('.update_client').on('click', function () {
         var actualizar_client = $('#datos_client').serialize();
         console.log(actualizar_client);
-        
+
         $.ajax({
             type: 'POST',
             url: 'ajax.php',
@@ -69,6 +65,40 @@ $(document).ready(function () {
         });
     });
 
-});
+    $('.borrar').on('click', function () {
+
+           //consigue los elementos de la tabla de la vista
+           $tr = $(this).closest('tr');
+           //mapea los datos y los guarda en la viariable datos
+           var datos = $tr.children("td").map(function () {
+               return $(this).text();
+           });
+   
+           // console.log(datos)
+   
+           $('#delete_id').val(datos[0]);
+    })
+
+    $('.delete_client').on('click',function() {
+        var delete_client = $('#id_client').serialize();
+
+        $.ajax({
+            type: 'POST',
+            url: 'ajax.php',
+            data: delete_client,
+            sucess: function (r) {
+                console.log(r)
+                if (r == 1) {
+                    alert("hola");
+
+                } else {
+                    alert("error");
+                }
+            }
+        });
+
+    })
+})
+
 
 
